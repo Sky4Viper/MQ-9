@@ -20,6 +20,15 @@
 		<startup>
 			<splash-texture>Aircraft/MQ-9/Splash2.png</splash-texture>
 		</startup>
+
+		<previews>
+      		<preview>
+        		<type>exterior</type>
+        		<splash type="bool">true</splash>
+        		<path>Aircraft/MQ-9/Preview1.png</path>
+			</preview>
+		</previews>
+
 		<minimum-fg-version>2018.2</minimum-fg-version>
 	
 	    <model>
@@ -90,6 +99,15 @@
 					<brightness type="float">0.85</brightness>
 					<transparent type="bool">true</transparent>
 					<red type="float">1.0</red>
+					<green type="float">1.0</green>
+					<blue type="float">1.0</blue>
+				</color>
+				<color n="2">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">1.0</red>
 					<green type="float">0.2</green>
 					<blue type="float">0.0</blue>
 				</color>
@@ -107,7 +125,7 @@
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
 				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
-				<pitch-offset-deg>-28</pitch-offset-deg>
+				<pitch-offset-deg>-5</pitch-offset-deg>
 				<x-offset-m archive="y">  0.0000 </x-offset-m>
 				<y-offset-m archive="y"> -0.2792 </y-offset-m>
 				<z-offset-m archive="y"> -4.3564 </z-offset-m>
