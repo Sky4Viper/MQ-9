@@ -20,6 +20,7 @@
 		<startup>
 			<splash-texture>Aircraft/MQ-9/Splash.png</splash-texture>
 		</startup>
+
 		<minimum-fg-version>2018.2</minimum-fg-version>
 	
 	    <model>
@@ -95,6 +96,15 @@
 					<brightness type="float">0.85</brightness>
 					<transparent type="bool">true</transparent>
 					<red type="float">1.0</red>
+					<green type="float">1.0</green>
+					<blue type="float">1.0</blue>
+				</color>
+				<color n="2">
+					<alpha type="float">0.85</alpha>
+					<antialiased type="bool">true</antialiased>
+					<brightness type="float">0.85</brightness>
+					<transparent type="bool">true</transparent>
+					<red type="float">1.0</red>
 					<green type="float">0.2</green>
 					<blue type="float">0.0</blue>
 				</color>
@@ -112,7 +122,7 @@
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
 				<ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
-				<pitch-offset-deg>-28</pitch-offset-deg>
+				<pitch-offset-deg>-5</pitch-offset-deg>
 				<x-offset-m archive="y">  0.0000 </x-offset-m>
 				<y-offset-m archive="y"> -0.2792 </y-offset-m>
 				<z-offset-m archive="y"> -4.3564 </z-offset-m>
@@ -191,6 +201,21 @@
 				<name>d</name>
 				<desc>Deselect all stations</desc>
 			</key>
+
+			<key>
+				<name>Ctrl-O</name>
+				<desc>Toggle IR ON/OFF</desc>
+			</key>
+
+			<key>
+				<name>Ctrl-L</name>
+				<desc>Toggle Laser ON/OFF</desc>
+			</key>
+
+			<key>
+				<name>Shift-L</name>
+				<desc>Toggle All Lights ON/OFF</desc>
+			</key>
 			
 			<key>
 				<name>f</name>
@@ -253,9 +278,9 @@
 				<name>1</name>
 				<desc>Station 1</desc>
 				<binding>
-					 <command>property-assign</command>
+					 <command>property-toggle</command>
 					<property>fdm/jsbsim/systems/armament/station1/selected</property>
-					<value>1</value>
+					<!-- <value>1</value> -->
 				</binding>
 			</key>
 
@@ -263,9 +288,9 @@
 				<name>2</name>
 				<desc>Station 2</desc>
 				<binding>
-					<command>property-assign</command>
+					<command>property-toggle</command>
 					<property>fdm/jsbsim/systems/armament/station2/selected</property>
-					<value>1</value>
+					<!-- <value>1</value> -->
 				</binding>
 			</key>
 
@@ -273,9 +298,9 @@
 				<name>3</name>
 				<desc>Station 3</desc>
 				<binding>
-					<command>property-assign</command>
+					<command>property-toggle</command>
 					<property>fdm/jsbsim/systems/armament/station3/selected</property>
-					<value>1</value>
+					<!-- <value>1</value> -->
 				</binding>
 			</key>
 
@@ -283,9 +308,9 @@
 				<name>4</name>
 				<desc>Station 4</desc>
 				<binding>
-					<command>property-assign</command>
+					<command>property-toggle</command>
 					<property>fdm/jsbsim/systems/armament/station4/selected</property>
-					<value>1</value>
+					<!-- <value>1</value> -->
 				</binding>
 			</key>
 
@@ -293,9 +318,9 @@
 				<name>5</name>
 				<desc>Station 5</desc>
 				<binding>
-					<command>property-assign</command>
+					<command>property-toggle</command>
 					<property>fdm/jsbsim/systems/armament/station5/selected</property>
-					<value>1</value>
+					<!-- <value>1</value> -->
 				</binding>
 			</key>
 
@@ -303,9 +328,9 @@
 				<name>6</name>
 				<desc>Station 6</desc>
 				<binding>
-					<command>property-assign</command>
+					<command>property-toggle</command>
 					<property>fdm/jsbsim/systems/armament/station6/selected</property>
-					<value>1</value>
+					<!-- <value>1</value> -->
 				</binding>
 			</key>
 			
@@ -346,12 +371,68 @@
 				</mod-up>
 			</key>
 
+			<!-- <key n="23">
+          		<name>Ctrl-w</name>
+          		<desc>MasterArm</desc>
+          		<binding>
+            		<command>property-toggle</command>
+            	<property>/controls/armament/masterarm</property>
+          		</binding>
+       		</key> -->
+
+			<key n="12">
+          		<name>Ctrl-L</name>
+          		<desc>LaserArm</desc>
+          		<binding>
+            		<command>property-toggle</command>
+            		<property>/controls/armament/laserarm</property>
+          		</binding>
+       		</key>
+
+			<key n="15">
+          		<name>Ctrl-O</name>
+          		<desc>Toggle IR</desc>
+          		<binding>
+            		<command>property-toggle</command>
+            		<property>/sim/rendering/als-filters/use-filtering</property>
+          		</binding>
+				<binding>
+            		<command>property-toggle</command>
+            		<property>/sim/rendering/als-filters/use-IR-vision</property>
+          		</binding>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/hud/current-color</property>
+				</binding>
+       		</key>
+
+			<key n="76">
+          		<name>Shift-L</name>
+          		<desc>LightsToggle</desc>
+          		<binding>
+        			<command>property-toggle</command>
+        			<property>/controls/lighting/nav-lights-switch</property>
+				</binding>
+				<binding>
+        			<command>property-toggle</command>
+        			<property>/controls/lighting/beacon-switch</property>
+				</binding>
+				<binding>
+        			<command>property-toggle</command>
+        			<property>/controls/lighting/strobe-switch</property>
+				</binding>
+       		</key>
+
 		</keyboard>
 	</input>
 	
 	<!-- Engine -->
 
 	<controls>
+		<armament>
+			<masterarm type="bool">false</masterarm>
+			<laserarm type="bool">false</laserarm>
+		</armament>
 		<engines>
 			<run1 type="bool">true</run1>
 			<start1 type="bool">false</start1>
